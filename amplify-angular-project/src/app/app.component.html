@@ -1,25 +1,50 @@
-<h1>Users App</h1>
-<div class="addComponent">
-  
-  <div style="padding: 5px 0px;">
-    <Label>Name:</Label>
-    <input type="text" [(ngModel)]="inputTxt">
+<div style="text-align: center;">
+  <h1>Users App</h1>
+
+  <div class="addComponent" style="margin-bottom: 20px;">
+    <div style="padding: 10px;">
+      <label for="name" style="margin-right: 10px;">Name:</label>
+      <input id="name" type="text" [(ngModel)]="name">
+    </div>
+    <div style="padding: 10px;">
+      <label for="email" style="margin-right: 10px;">Email:</label>
+      <input id="email" type="email" [(ngModel)]="email" >
+    </div>
+    <div style="padding: 10px;" >
+      <label for="tenantId" style="margin-right: 10px;">Tenant Id:</label>
+      <input id="tenantId" type="text" [(ngModel)]="tenantId">
+    </div>
+    <button (click)="addToList()" style="padding: 10px 20px; font-size: 16px;">Add</button>
   </div>
-  
-  <div style="padding: 5px 0px;">
-    <Label>Email:</Label>
-    <input type="email" >
+  <div *ngIf="successMessage" style="color: green; margin-top: 20px;">
+    {{ successMessage }}
   </div>
-  
-  <!-- <div style="padding: 5px 0px;">
-    <Label>Name:</Label>
-    <input type="text" >
-  </div> -->
-  <button  (click)="addToList()"> Add </button>
+  <div>
+    <h2>Users List</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Name</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Email</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Tenant Id</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Created Date</th>
+          <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users; let i = index">
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ item.name }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ item.email }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ item.tenantId }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ item.createdAt | date: 'short' }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">
+            <button (click)="removeItem(item.id)" style="padding: 5px 10px; background-color: red; color: white; border: none; cursor: pointer;">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="deleteUserMessage" style="color: red; margin-top: 20px;">
+    {{ deleteUserMessage }}
+  </div>
 </div>
-<ul>
-  <li *ngFor="let item of listArr; let i = index" (click)="removeItem(i)">
-    <label>{{item}}</label>
-    <!--<button (click)="removeItem(i)" > Remove </button> -->
-  </li>
-</ul>
