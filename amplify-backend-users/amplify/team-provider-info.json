@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifybackendusers-dev-5d86f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654558986:role/amplify-amplifybackendusers-dev-5d86f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654558986:role/amplify-amplifybackendusers-dev-5d86f-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-amplifybackendusers-dev-5d86f-deployment",
+      "UnauthRoleName": "amplify-amplifybackendusers-dev-5d86f-unauthRole",
+      "StackName": "amplify-amplifybackendusers-dev-5d86f",
+      "StackId": "arn:aws:cloudformation:eu-west-2:654654558986:stack/amplify-amplifybackendusers-dev-5d86f/928dc3a0-4a09-11ef-ad08-029d86045ac3",
+      "AmplifyAppId": "d3vve93od3ssc7"
+    },
+    "categories": {
+      "api": {
+        "amplifybackendusers": {}
+      },
+      "function": {
+        "amplifyuserlambdafunction": {
+          "deploymentBucketName": "amplify-amplifybackendusers-dev-5d86f-deployment",
+          "s3Key": "amplify-builds/amplifyuserlambdafunction-4135763366624a76614e-build.zip",
+          "apiUrl": "https://4hsn7rcvorgybllolith2flw3m.appsync-api.eu-west-2.amazonaws.com/graphql",
+          "region": "eu-west-2"
+        }
+      }
+    }
+  }
+}

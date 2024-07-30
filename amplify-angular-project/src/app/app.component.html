@@ -1,0 +1,25 @@
+<h1>Users App</h1>
+<div class="addComponent">
+  
+  <div style="padding: 5px 0px;">
+    <Label>Name:</Label>
+    <input type="text" [(ngModel)]="inputTxt">
+  </div>
+  
+  <div style="padding: 5px 0px;">
+    <Label>Email:</Label>
+    <input type="email" >
+  </div>
+  
+  <!-- <div style="padding: 5px 0px;">
+    <Label>Name:</Label>
+    <input type="text" >
+  </div> -->
+  <button  (click)="addToList()"> Add </button>
+</div>
+<ul>
+  <li *ngFor="let item of listArr; let i = index" (click)="removeItem(i)">
+    <label>{{item}}</label>
+    <!--<button (click)="removeItem(i)" > Remove </button> -->
+  </li>
+</ul>
